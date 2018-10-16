@@ -1,0 +1,107 @@
+/* MEDIA */
+@mixin breakpoint($point) {
+    @if $point == laptop {
+    @media (max-width: 1439px) {
+      @content;
+    }
+  } @else if $point == tablet {
+    @media (max-width: 1023px) {
+      @content;
+    }
+  } @else if $point == mobile-l {
+    @media (max-width: 767px) {
+      @content;
+    }
+  } @else if $point == mobile-m {
+    @media (max-width: 423px) {
+      @content;
+    }
+  } @else if $point == mobile-s {
+    @media (max-width: 375px) {
+      @content;
+    }
+  }
+}
+
+/* PLACEHOLDER */
+@mixin placeholder($font, $color, $anim: false) {
+  @if $anim {
+    &::-webkit-input-placeholder {
+      font: $font;
+      color: $color;
+      opacity: 1;
+      transform: translateY(-2px);
+      transition: opacity 0.2s ease-out;
+    }
+    &::-moz-placeholder {
+      font: $font;
+      color: $color;
+      opacity: 1;
+      transition: opacity 0.2s ease-out;
+    }
+    &:-moz-placeholder {
+      font: $font;
+      color: $color;
+      opacity: 1;
+      transform: translateY(-2px);
+      transition: opacity 0.2s ease-out;
+    }
+    &:-ms-input-placeholder {
+      font: $font;
+      color: $color;
+      opacity: 1;
+      transform: translateY(-2px);
+      transition: opacity 0.2s ease-out;
+    }
+    &:focus::-webkit-input-placeholder {
+      opacity: 0;
+    }
+    &:focus::-moz-placeholder {
+      opacity: 0;
+    }
+    &:focus:-moz-placeholder {
+      opacity: 0;
+    }
+    &:focus:-ms-input-placeholder {
+      opacity: 0;
+    }
+  } @else {
+    &::-webkit-input-placeholder {
+      font: $font;
+      color: $color;
+    }
+    &::-moz-placeholder {
+      font: $font;
+      color: $color;
+    }
+    &:-moz-placeholder {
+      font: $font;
+      color: $color;
+    }
+    &:-ms-input-placeholder {
+      font: $font;
+      color: $color;
+    }
+  }
+}
+
+@mixin scrollbar($track, $thumb, $width, $radius) {
+  &::-webkit-scrollbar {
+    -webkit-appearance: none;
+  }
+  &::-webkit-scrollbar:vertical {
+    width: $width;
+  }
+  &::-webkit-scrollbar:horizontal {
+    height: $width;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: $thumb;
+    border-radius: $radius;
+    border: none;
+  }
+  &::-webkit-scrollbar-track {
+    border-radius: $radius;
+    background-color: $track;
+  }
+}

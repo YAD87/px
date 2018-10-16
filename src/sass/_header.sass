@@ -1,0 +1,143 @@
+@import "settings"
+@import "mixin"
+.header
+  display: flex
+  width: 100%
+  &__cell
+    min-height: 50px
+    &:first-child
+      width: 36%
+      height: 760px
+      border-radius: 6px
+      background-color: #ffffff
+      position: relative
+      padding-top: 153px
+      &:before
+        content: ''
+        display: block
+        width: 1000%
+        position: absolute
+        top: 0
+        bottom: 0
+        right: 100%
+        background-color: #ffffff
+    &:last-child
+      width: 64%
+  .logo
+    display: inline-block
+    max-width: 245px
+    margin-bottom: 60px
+
+.header-title
+  font-family: $robotoMedium
+  position: relative
+  z-index: 2
+  font-size: 50px
+  font-weight: 500
+  font-style: normal
+  font-stretch: normal
+  line-height: 1.2
+  letter-spacing: normal
+  color: #354052
+  min-width: 646px
+  border-radius: 6px
+  -webkit-backdrop-filter: blur(2px)
+  backdrop-filter: blur(2px)
+  background: rgba(206, 213, 230, 0.6)
+  padding: 46px 35px
+  span
+    font-family: $robotoRegular
+    font-size: 20px
+    font-weight: normal
+    font-style: normal
+    font-stretch: normal
+    line-height: 1.4
+    letter-spacing: normal
+    color: #354052
+    display: block
+
+.top-nav
+  display: flex
+  flex-wrap: wrap
+  align-items: center
+  justify-content: space-between
+  width: 100%
+  min-height: 20px
+  padding-top: 37px
+  padding-bottom: 37px
+
+.nav
+  display: flex
+  flex-wrap: wrap
+  li
+    padding-left: 65px
+  a
+    font-family: $robotoRegular
+    font-size: 16px
+    font-weight: normal
+    font-style: normal
+    font-stretch: normal
+    line-height: 1.5
+    letter-spacing: normal
+    text-align: center
+    color: #354052
+
+.top-nav-cell
+  position: relative
+
+.search
+  position: absolute
+  right: 0
+  top: -8px
+  display: none
+  &.open
+    display: block
+  input
+    width: 310px
+    height: 52px
+    border-radius: 6px
+    border: solid 1px #ced2d7
+    background: $global-background
+    padding-left: 50px
+    font-family: $robotoRegular
+    font-size: 16px
+    font-weight: normal
+    font-style: normal
+    font-stretch: normal
+    line-height: 1.5
+    letter-spacing: normal
+    color: #8992a1
+    @include placeholder(16px, #8992a1)
+  .icon-search
+    position: absolute
+    left: 15px
+    top: 52%
+    transform: translate(0, -48%)
+    font-size: 14px
+    color: #354052
+
+.header-search
+  cursor: pointer
+  font-size: 24px
+  color: #354052
+
+.header-video
+  width: 1019px
+  height: 568px
+  object-fit: contain
+  margin-left: -116px
+  position: relative
+  background: url("../img/header-vid.jpg") no-repeat center
+  background-size: cover
+  border-radius: 6px
+  box-shadow: 0 10px 20px 0 rgba(53, 64, 82, 0.2)
+
+
+.scroll-row
+  padding-left: 40px
+  margin-top: 27px
+  background: linear-gradient(rgba(53, 64, 82, 0.2), rgba(53, 64, 82, 0.2)) no-repeat 100% 17px
+  background-size: 89% 1px
+  .icon-scroll-icon
+    font-size: 24px
+    color: #354052
